@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/bahremsd/tmmax#readme",
   "publishConfig": {
-  "@YOUR-USERNAME:registry": "https://npm.pkg.github.com"
+  "@bahremsd:registry": "https://npm.pkg.github.com"
 }
 }
