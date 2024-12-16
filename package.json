@@ -1,0 +1,25 @@
+{
+  "name": "tmmax",
+  "version": "1.0.0",
+  "description": "tmmax init",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahremsd/tmmax.git"
+  },
+  "keywords": [
+    "photonics"
+  ],
+  "author": "Bahrem Serhat Danis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahremsd/tmmax/issues"
+  },
+  "homepage": "https://github.com/bahremsd/tmmax#readme"
+}
