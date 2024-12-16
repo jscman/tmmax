@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/bahremsd/tmmax/issues"
   },
-  "homepage": "https://github.com/bahremsd/tmmax#readme"
+  "homepage": "https://github.com/bahremsd/tmmax#readme",
+  "publishConfig": {
+    "@bahremsd:registry": "https://npm.pkg.github.com"
+}
 }
