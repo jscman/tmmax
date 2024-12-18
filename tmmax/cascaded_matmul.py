@@ -1,6 +1,8 @@
 import jax
 #jax.config.update('jax_enable_x64', True) # Ensure high precision (64-bit) is enabled in JAX
 import jax.numpy as jnp # Import JAX's version of NumPy for differentiable computations
+from jax import Array
+from jax.typing import ArrayLike
 
 def matmul(carry, phase_r_t):
 
@@ -51,5 +53,5 @@ def cascaded_matrix_multiplication(phases: ArrayLike, rts: ArrayLike) -> Array:
     #Here, _matmul is the function applied, starting with the identity matrix.
     # `result` will hold the final matrix after processing all input matrices.
     result, _ = jax.lax.scan(matmul, initial_value, phase_rt_stack)  # Scan function accumulates results of _matmul over the matrices.
-    
+
     return result

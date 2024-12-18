@@ -1,12 +1,15 @@
 import jax
 import jax.numpy as jnp # Import JAX's version of NumPy for differentiable computations
 from jax import jit, vmap 
+from jax import Array
+from jax.typing import ArrayLike
+from typing import Union, List, Tuple, Text, Dict, Callable
 
 from .angle import compute_layer_angles
 from .wavevector import compute_kz
-from .cascaded_matmul import _cascaded_matrix_multiplication
+from .cascaded_matmul import cascaded_matrix_multiplication
 from .data import interpolate_nk
-from .reflect_transmit import _compute_rt_one_wl, _create_phases_ts_rs, _calculate_transmittace_from_coeff
+from .reflect_transmit import compute_rt, calculate_reflectance_from_coeff, calculate_transmittace_from_coeff
 
 
 @jit
