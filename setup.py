@@ -44,6 +44,6 @@ setup(
     },
     include_package_data=True,
     package_data={
-        'tmmax': ['nk_data/*.csv'],
+        'tmmax': ['nk_data/csv/*.csv', 'nk_data/numpy/*.npy'],
     },
 )
