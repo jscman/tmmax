@@ -1,7 +1,73 @@
-# **tmmax: High-Performance Transfer Matrix Method with JAX**
+# **tmmax: transfer matrix method with jax**
+
+<div align="center">
+  <a href="https://pypi.org/project/tmmax/">
+    <img src="https://github.com/bahremsd/tmmax/blob/master/docs/images/logo_tmmax.png" alt="tmmax">
+  </a>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#documentation">Documentation</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#database">Database</a></li>
+    <li><a href="#benchmarks">Benchmarks</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#credits">Credits</a></li>
+    <li><a href="#contact-and-support">Contact and Support</a></li>
+  </ol>
+</details>
+
+## Introduction
+
+## Documentation
+
+## Usage
+
+<div align="center">
+  <img src="https://github.com/bahremsd/tmmax/blob/master/docs/images/thin_film_example.png" alt="usage_example">
+</div>
+
+## Database
+
+<div align="center">
+  <img src="https://github.com/bahremsd/tmmax/blob/master/docs/images/SiO2_nk_plot.png" alt="database_example_sio2">
+</div>
+
+## Benchmarks
+
+<div align="center">
+  <img src="https://github.com/bahremsd/tmmax/blob/master/benchmarks/layer_size_exp_results/layer_size_figure.png" alt="layer_size_exp">
+</div>
+
+<div align="center">
+  <img src="https://github.com/bahremsd/tmmax/blob/master/benchmarks/vmap_array_length_exp_results/vmap_array_length_figure.png" alt="vmap_array_length_exp">
+</div>
+
+## Installation
+
+## License
+
+## Credits
+
+## Contact and Support
 
 
-![image](docs/logo/logo_tmmax.png)
+
+
+
+
+
+
+
+
+
+
+
 
 `tmmax` is a highly optimized Python library for simulating the optical properties of multilayer thin films using the Transfer Matrix Method (TMM). This library leverages the power of **JAX**, a modern numerical computing library, to deliver high-performance computations, automatic differentiation, and seamless GPU/TPU acceleration. By exploiting JAX’s vectorized operations and just-in-time (JIT) compilation, `tmmax` achieves unprecedented efficiency and speed in modeling complex multilayer systems.
 
