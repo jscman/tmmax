@@ -634,10 +634,10 @@ def tmm_coh(material_list: List[str],
 
 def tmm(material_list: List[str],
         thickness_list: ArrayLike,
-        coherency_list: ArrayLike,
         wavelength_arr: ArrayLike,
         angle_of_incidences: ArrayLike,
-        polarization: Text) -> Tuple[Array, Array]:
+        coherency_list: ArrayLike = None,
+        polarization: Text = 's') -> Tuple[Array, Array]:
     """
     Perform the Transfer Matrix Method (TMM) for multilayer thin films.
 
@@ -684,7 +684,7 @@ def tmm(material_list: List[str],
     coherent_groups_backward, _, coherency_indices_backward = find_coh_and_incoh_indices(jnp.flip(coherency_list))
 
     # Check if the multilayer film is fully coherent (i.e., only 2 incoherent layers).
-    if len(incoherent_indices_forward) == 2:
+    if (len(incoherent_indices_forward) == 2) or coherency_list == None:
         # If the multilayer structure is fully coherent, use the vectorized coherent TMM function.
         result = vectorized_coh_tmm(data, material_distribution, thickness_list, wavelength_arr, angle_of_incidences, polarization)
         # Return the result (tuple of transmission and reflection coefficients).
