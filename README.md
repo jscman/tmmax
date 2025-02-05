@@ -131,13 +131,6 @@ The database is designed to be extensible, and we plan to include additional mat
 
 ## Benchmarks
 
-Farklı transfer matrix metodlarının benchmark'larını yaparken ilk önce layer size'a göre run time'ın comparison2unu yaptık. Çünkü optical multilayer coating'ler hassasiyetine göre çok fazla layer'lı olabilirler. Bu yüzden tmm, tmm-fast, vtmm ve tmmax'ı aynı koşullar altında (aynı hardware ve aynı wavelength, anlge of incidence array length'i) comparison'unu yaptık. Gördüğümüz kadarıyla layer sayısı arttığında en scalable sistem bizimkisi yani tmmax oluyor.
-
-
-Wavelength array length'ini ve angle of incidence array length'leri de run time'a etkisi vardır. Bundan dolayı bu iki aprametreye göre de run time analziei yapıldı. Bu analizde fast-tmm'in vtmm ve tmmax'a göre daha yavaş kaldığı görüldü. Ancak fast-tmm CPU'da multi core processing'e göre tasarlandığı ayrıca GPU için de tasarlandığı için onun bu preformans değerleri gayet uyugndur. Denildiği gibi fast-tmm 1 core cpu için tasarlanmamıştır. Bunların yanında vtmm ile tmmax'ın array length'lerine göre performansı neredeyse aynı olsa da layer sayısı 8'den 80'e arttığında vtmm'in tmmax'dan daha fazla zamn aldığını görebiliyoruz. Ayrıca benchmark'ın yapıjldığı zaman vtmm'in inital beta sürümüdür bundan dolayı ilerleyen vtmm sürümlerinde bu benchmark tekrar yapılmalıdır. 
-
-Yukarıda da bahsettiğimiz gibi bazı tmm approach'leri gpu üzerinde daha iyi çalışacaktır çünkü vtmm tensorflow, fast-tmm pytoch framework2ünde yazılmıştır. Eğer elinizde GPU bulunuyorsa bu benchmark'ları baz almayarak tekrar vtmm, fast-tmm ve tmmax'ın benchmark'larını yapınız. Benchmark sonuçları ve kodları benchmark klasöründe bulunabilir.
-
 In evaluating the performance of various transfer matrix method implementations, we conducted rigorous benchmarking to compare runtime efficiency as a function of layer count, wavelength array length, and angle of incidence array length. Given that optical multilayer coatings can contain a substantial number of layers based on design constraints and performance sensitivity, scalability is a critical factor. To ensure a fair comparison, all tests were executed under identical conditions, including hardware specifications and input parameters.
 
 ### Layer Size vs Run Time
