@@ -645,9 +645,9 @@ def tmm(material_list: List[str],
     ----------
         material_list (List[str]): A list of material names. Each material is identified by a string.
         thickness_list (ArrayLike): An array of thicknesses corresponding to each layer.
-        coherency_list (ArrayLike): An array that specifies the coherency (whether the layer is coherent or incoherent).
         wavelength_arr (ArrayLike): An array of wavelengths over which to perform the simulation.
         angle_of_incidences (ArrayLike): An array of angles of incidence.
+        coherency_list (ArrayLike): An array that specifies the coherency (whether the layer is coherent or incoherent).
         polarization (Text): The type of polarization ('s' for s-polarized or 'p' for p-polarized).
 
 
@@ -676,7 +676,13 @@ def tmm(material_list: List[str],
     else:
         # Raise an error if the polarization input is invalid.
         raise TypeError("The polarization can be 's' or 'p', not other parts. Correct it")
-    
+
+    if coherency_list == None:
+        # If the multilayer structure is fully coherent, use the vectorized coherent TMM function.
+        result = vectorized_coh_tmm(data, material_distribution, thickness_list, wavelength_arr, angle_of_incidences, polarization)
+        # Return the result (tuple of transmission and reflection coefficients).
+        return result
+
     # Identify coherent and incoherent layer indices for the forward direction.
     coherent_groups_forward, incoherent_indices_forward, coherency_indices_forward = find_coh_and_incoh_indices(coherency_list)
     
@@ -684,7 +690,7 @@ def tmm(material_list: List[str],
     coherent_groups_backward, _, coherency_indices_backward = find_coh_and_incoh_indices(jnp.flip(coherency_list))
 
     # Check if the multilayer film is fully coherent (i.e., only 2 incoherent layers).
-    if (len(incoherent_indices_forward) == 2) or coherency_list == None:
+    if (len(incoherent_indices_forward) == 2):
         # If the multilayer structure is fully coherent, use the vectorized coherent TMM function.
         result = vectorized_coh_tmm(data, material_distribution, thickness_list, wavelength_arr, angle_of_incidences, polarization)
         # Return the result (tuple of transmission and reflection coefficients).
