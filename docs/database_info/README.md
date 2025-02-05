@@ -1,115 +1,168 @@
-# **tmmax: transfer matrix method with jax**
+# **Database Information**
 
-<div align="center">
-  <a href="https://pypi.org/project/tmmax/">
-    <img src="https://github.com/bahremsd/tmmax/blob/master/docs/images/logo_tmmax.png" alt="tmmax">
-  </a>
-</div>
+## Materials
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#documentation">Documentation</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#database">Database</a></li>
-    <li><a href="#benchmarks">Benchmarks</a></li>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#credits">Credits</a></li>
-    <li><a href="#contact-and-support">Contact and Support</a></li>
-  </ol>
-</details>
+- **Air**
 
-## Introduction
+    _E. R. Peck and K. Reeder. Dispersion of air. J. Opt. Soc. Am. 62, 958-962 (1972)_ [doi](https://doi.org/10.1364/JOSA.62.000958)
 
-`tmmax` is a high-performance computational library designed for efficient calculation of optical properties in multilayer thin-film structures. Engineered to serve as a Swiss Army knife tool for thin-film optics research, `tmmax` integrates a comprehensive suite of advanced numerical methods. At its core, `tmmax` leverages JAX to enable just-in-time (JIT) compilation, vectorized operations, and XLA (Accelerated Linear Algebra) optimizations, dramatically accelerating the evaluation of optical responses in multilayer coatings. By exploiting these capabilities, `tmmax` achieves exceptional computational speed, making it the optimal choice for modeling and analyzing complex systems.
+    **COMMENTS: "Standard air: dry air at 15 °C, 101.325 kPa and with 450 ppm CO2 content."**
 
-Originally architected for CPU-based execution to ensure accessibility and scalability across diverse hardware configurations, `tmmax` seamlessly extends its computational efficiency to GPU and TPU platforms, thanks to JAX’s unified execution model. This adaptability ensures that high-performance simulations can be executed efficiently across a range of computing environments without modifying the core implementation. Moreover, `tmmax` natively supports automatic differentiation (AD) through JAX’s powerful autograd framework, allowing users to compute analytical gradients of optical properties with respect to arbitrary system parameters. This capability makes it particularly well-suited for gradient-based inverse design, machine learning-assisted optimization, and parameter estimation in photonic applications, providing a direct pathway to next-generation thin-film engineering.
+- **Al2O3** 
 
+    _S. V. Zhukovsky, A. Andryieuski, O. Takayama, E. Shkondin, R. Malureanu, F. Jensen, A. V. Lavrinenko. Experimental demonstration of effective medium approximation breakdown in deeply subwavelength all-          dielectric multilayers, Phys. Rev. Lett. 115, 177402 (2015)_ [doi](https://doi.org/10.1103/PhysRevLett.115.177402)  
+    
+    **COMMENTS: "Numerical data kindly provided by Osamu Takayama"**
 
-## Documentation
+- **ALON**
 
-## Usage
+    T. M. Hartnett et al.. Optical properties of ALON (aluminum oxynitride), IR Phys. Technol, 39, 203-211 (1998) [doi](https://doi.org/10.1016/S1350-4495(98)00007-3) 
+    
+    **COMMENTS: "Nitrogen content: 5.88 at.%"**
 
-```python
-from tmmax.tmm import tmm
+- **CaF2**
+  
+    Q. Zheng, X. Wang, D. Thompson. Temperature-dependent optical properties of monocrystalline CaF₂, BaF₂, and MgF₂. [doi](https://doi.org/10.1364/OME.496246)
 
-# Define your multilayer stack and simulation parameters
+    **COMMENTS: "The supplementary materials of the original publication contain coefficients of the Sellmeier formula for multiple temperatures in the range of 21  °C to 368  °C."**
 
-material_list = ["Air", ... , "SiO2", ...]
-thickness_list = jnp.array(...)
-wavelength_arr  = jnp.array(...)
-angle_of_incidences  = jnp.array(...)
-polarization = 's' # or 'p'
+- **CdS** 
 
-result = tmm(material_list = material_list,
-             thickness_list = thickness_list,
-             wavelength_arr = wavelength_arr,
-             angle_of_incidences = angle_of_incidences,
-             polarization = polarization)
-```
+    R. E. Treharne, A. Seymour-Pierce, K. Durose, K. Hutchings, S. Roncallo, D. Lane, Optical design and fabrication of fully sputtered CdTe/CdS solar cells [doi](https://doi.org/10.1088/1742-6596/286/1/012038)
+    
+    **COMMENTS: "A CdS film was deposited on to a soda-lime glass substrate using RF magnetron sputtering. A variable-angle ellipsometer was used to take amplitude and phase change measurements. The refractive       index and extinction coefficient was extracted from a multi-oscillator model fit to the ellipsometry data, as a function of wavelength, from 300 to 1500 nm"**
 
-<div align="center">
-  <img src="https://github.com/bahremsd/tmmax/blob/master/docs/images/thin_film_example.png" alt="usage_example">
-</div>
+- **CdTe**
 
-```python
-from tmmax.tmm import tmm
+    R. E. Treharne, A. Seymour-Pierce, K. Durose, K. Hutchings, S. Roncallo, D. Lane, Optical design and fabrication of fully sputtered CdTe/CdS solar cells [doi](https://doi.org/10.1088/1742-6596/286/1/012038)
+    
+    **COMMENTS: "A CdS film was deposited on to a soda-lime glass substrate using RF magnetron sputtering. A variable-angle ellipsometer was used to take amplitude and phase change measurements. The refractive       index and extinction coefficient was extracted from a multi-oscillator model fit to the ellipsometry data, as a function of wavelength, from 300 to 1500 nm"**
 
-# Define your multilayer stack and simulation parameters
+- **CeF3**
 
-material_list = ["Air", ... , "SiO2", ...]
-thickness_list = jnp.array(...)
-wavelength_arr  = jnp.array(...)
-angle_of_incidences  = jnp.array(...)
-polarization = 's' # or 'p'
+    Luis V. Rodríguez-de Marcos, Juan I. Larruquert, José A. Méndez, and José A. Aznárez, "Self-consistent optical constants of MgF2, LaF3, and CeF3 films," Opt. Mater. Express 7, 989-1006 (2017) [doi](https://doi.org/10.1364/OME.7.000989)
 
-result = tmm(material_list = material_list,
-             thickness_list = thickness_list,
-             wavelength_arr = wavelength_arr,
-             angle_of_incidences = angle_of_incidences,
-             polarization = polarization)
-```
+    **COMMENTS: "40 nm film prepared by evaporation from tungsten boat at 250  °C"**
 
-## Database
+- **Ge**
 
-<div align="center">
-  <img src="https://github.com/bahremsd/tmmax/blob/master/docs/images/SiO2_nk_plot.png" alt="database_example_sio2">
-</div>
+    Tatiana Amotchkina, Michael Trubetskov, Daniel Hahner, and Vladimir Pervak, "Characterization of e-beam evaporated Ge, YbF3, ZnS, and LaF3 thin films for laser-oriented coatings," Appl. Opt. 59, A40-A47 (2020) [doi](https://doi.org/10.1364/AO.59.000A40)
 
-## Benchmarks
+    **COMMENTS: "0.42 µm Ge_3 film deposited on 1 mm thick ZnSe substratee by e-beam evaporation at 120  °C substrate temperature."**
 
-<div align="center">
-  <img src="https://github.com/bahremsd/tmmax/blob/master/benchmarks/layer_size_exp_results/layer_size_figure.png" alt="layer_size_exp">
-</div>
+- **HfO2**
 
-<div align="center">
-  <img src="https://github.com/bahremsd/tmmax/blob/master/benchmarks/vmap_array_length_exp_results/vmap_array_length_figure.png" alt="vmap_array_length_exp">
-</div>
+    T.J. Bright, J.I. Watjen, Z.M. Zhang, C. Muratore, A.A. Voevodin, Optical properties of HfO2 thin films deposited by magnetron sputtering: From the visible to the far-infrared, Thin Solid Films, Volume 520, Issue 22, 2012, Pages 6793-6802, ISSN 0040-6090. [doi](https://doi.org/10.1016/j.tsf.2012.07.037)
 
-## Installation
+    **COMMENTS: "Thin hafnia films of thicknesses from about 180 to 500 nm deposited on Si substrates using reactive magnetron sputtering."**
 
-You can install `tmmax` via PyPI:
+- **LaF3**
 
-```bash
-pip3 install tmmax
-```
+    Luis V. Rodríguez-de Marcos, Juan I. Larruquert, José A. Méndez, and José A. Aznárez, "Self-consistent optical constants of MgF2, LaF3, and CeF3 films," Opt. Mater. Express 7, 989-1006 (2017) [doi](https://doi.org/10.1364/OME.7.000989)
 
-## License
+    **COMMENTS: "40 nm film prepared by evaporation from tungsten boat at 250  °C"**
 
-## Credits
+- **LiF** 
 
-```bibtex
-@software{tmmax,
-  author = {Bahrem Serhat Danis},
-  title = {tmmax: High-Performance Transfer Matrix Method with JAX},
-  version = {0.0.2},
-  url = {https://github.com/bahremsd/tmmax},
-  year = {2024}
-}
-```
+    H. H. Li; Refractive index of alkali halides and its wavelength and temperature derivatives. J. Phys. Chem. Ref. Data 1 April 1976; 5 (2): 329–528. [doi](https://doi.org/10.1063/1.555536)
 
-## Contact and Support
+    **COMMENTS: "297 K (24  °C)"**
 
+- **MgF2**
+
+    Luis V. Rodríguez-de Marcos, Juan I. Larruquert, José A. Méndez, and José A. Aznárez, "Self-consistent optical constants of MgF2, LaF3, and CeF3 films," Opt. Mater. Express 7, 989-1006 (2017) [doi](https://doi.org/10.1364/OME.7.000989)
+
+    **COMMENTS: "40 nm film prepared by evaporation from tungsten boat at 250  °C"**
+
+- **MgO**
+
+    R. E. Stephens and I. H. Malitson. Index of refraction of magnesium oxide [doi](https://doi.org/10.6028/jres.049.025)
+
+    **COMMENTS: "23.3  °C. Formula for entire transmission range; use the other formula for  more accurate index values in the visible."**
+
+- **NaF** 
+
+    H. H. Li. Refractive index of alkali halides and its wavelength and temperature derivatives [doi](https://doi.org/10.1063/1.555536)
+
+    **COMMENTS: "297 K (24 °C)."**
+
+- **Nb2O5** 
+
+    Gao L, Lemarchand F, Lequime M. Exploitation of multiple incidences spectrometric measurements for thin film reverse engineering. Opt Express. 2012 Jul 2;20(14):15734-51. PMID: 22772265. [doi](https://doi.org/10.1364/OE.20.015734)
+
+    **COMMENTS: "500-nm monolayer deposited on BK7 substrate using the magnetron sputtering technique."**
+
+- **PbF2**
+
+    Malitson, I. H., and M. J. Dodge. "Refraction and dispersion of lead fluoride." Journal of the Optical Society of America. Vol. 59. No. 4. CIRCULATION FULFILLMENT DIV, 500 SUNNYSIDE BLVD, WOODBURY, NY 11797-2999: AMER INST PHYSICS, 1969.
+
+    **COMMENTS: "as cited in Handbook of Optics, 2nd edition, Vol. 2. McGraw-Hill 1994, ISBN 10: 0070479747"**
+
+- **Sc2O3**
+
+    Belosludtsev, A., Juškevičius, K., Ceizaris, L., Samuilovas, R., Stanionytė, S., Jasulaitienė, V., … & Kičas, S. (2018). Correlation between stoichiometry and properties of scandium oxide films prepared by reactive magnetron sputtering. Applied Surface Science, 427, 312-318. [doi](https://doi.org/10.1016/j.apsusc.2017.08.068)
+
+    **COMMENTS: "Stoichiometric 270 ±5 nm film on SiO<sub>2</sub> substrate."**
+
+- **Si** 
+
+    E. Shkondin, O. Takayama, M. E. Aryaee Panah, P. Liu, P. V. Larsen, M. D. Mar, F. Jensen, and A. V. Lavrinenko, "Large-scale high aspect ratio Al-doped ZnO nanopillars arrays as anisotropic metamaterials," Opt. Mater. Express 7, 1606-1627 (2017) [doi](https://doi.org/10.1364/OME.7.001606)
+
+    **COMMENTS: "Numerical data kindly provided by Osamu Takayama, Bulk silicone"**
+
+- **SiO** 
+
+    G. Hass and C. D. Salzberg. Optical properties of silicon monoxide in the wavelength region from 0.24 to 14.0 microns [doi](https://doi.org/10.1364/JOSA.44.000181)
+
+    **COMMENTS: "Data points extracted from a figure"**
+
+- **SiO2** 
+
+    Luis V. Rodríguez-de Marcos, Juan I. Larruquert, José A. Méndez, and José A. Aznárez, "Self-consistent optical constants of SiO2 and Ta2O5 films," Opt. Mater. Express 6, 3622-3637 (2016)[doi](https://doi.org/10.1364/OME.6.003622)
+
+    **COMMENTS: "Oxide films were deposited by reactive electron-beam evaporation onto various sorts of substrates at 300 °C"**
+
+- **SrF2**
+
+    H. H. Li. Refractive index of alkaline earth halides and its wavelength and temperature derivatives. [doi](https://doi.org/10.1063/1.555616)
+
+    **COMMENTS: "293 K (20 °C)"**
+
+- **Ta2O5**
+
+    Luis V. Rodríguez-de Marcos, Juan I. Larruquert, José A. Méndez, and José A. Aznárez, "Self-consistent optical constants of SiO2 and Ta2O5 films," Opt. Mater. Express 6, 3622-3637 (2016)[doi](https://doi.org/10.1364/OME.6.003622)
+
+    **COMMENTS: "Oxide films were deposited by reactive electron-beam evaporation onto various sorts of substrates at 300 °C"**
+
+- **Te** 
+
+    Arkadiusz Ciesielski, Lukasz Skowronski, Wojciech Pacuski, Tomasz Szoplik, Permittivity of Ge, Te and Se thin films in the 200–1500 nm spectral range. Predicting the segregation effects in silver, Materials Science in Semiconductor Processing, Volume 81, 2018, Pages 64-67, ISSN 1369-8001[doi](https://doi.org/10.1016/j.mssp.2018.03.003)
+
+    **COMMENTS: "30 nm-thick tellurium film deposited directly on SiO<sub>2</sub> substrate"**
+
+- **TiO2** 
+
+    S. V. Zhukovsky, A. Andryieuski, O. Takayama, E. Shkondin, R. Malureanu, F. Jensen, A. V. Lavrinenko. Experimental demonstration of effective medium approximation breakdown in deeply subwavelength all-dielectric multilayers [doi](https://doi.org/10.1103/PhysRevLett.115.177402)
+
+    **COMMENTS: "20 nm thick films on Si substrate deposited by atomic layer deposition (ALD) at 120 °C deposition temperature."**
+
+- **Y2O3** 
+
+    Y. Nigara. Measurement of the optical constants of yttrium oxide [doi](https://doi.org/10.1143/JJAP.7.404)
+
+- **ZnS** 
+    
+    S. Ozaki and S. Adachi. Optical constants of cubic ZnS [doi](https://doi.org/10.1143/JJAP.32.5008)
+
+    **COMMENTS: "Fit of author's experimental data to a simplified model of the interband transitions (MDF). Room Temperature."**
+
+- **ZnSe** 
+
+    M. R. Querry. Optical constants of minerals and other materials from the millimeter to the ultraviolet [url](https://api.semanticscholar.org/CorpusID:92855735)
+
+- **ZrO2** 
+
+    D. L Wood and K. Nassau. Refractive index of cubic zirconia stabilized with yttria [doi](https://doi.org/10.1364/AO.21.002978)
+
+    **COMMENTS: "Cubic zirconiza; 25  °C; Y2O3 content: 12.0 mol %"**
+  
