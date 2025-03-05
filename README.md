@@ -169,7 +169,7 @@ Also if you find the `tmmax` library beneficial in your work, we kindly ask that
 
 ```bibtex
 @software{tmmax,
-  author = {Bahrem Serhat Danis},
+  author = {Bahrem Serhat Danis, Esra Zayim},
   title = {tmmax: transfer matrix method with jax},
   version = {1.0.0},
   url = {https://github.com/bahremsd/tmmax},
