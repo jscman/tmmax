@@ -546,8 +546,8 @@ def vectorized_incoh_tmm(data: ArrayLike,
     # The first `vmap` applies vectorization across the angle_of_incidence axis (last dimension of the input array).
     # The second `vmap` applies vectorization across the wavelength axis (one level up in the input hierarchy).
     tmm_vmap = vmap(vmap(tmm_incoh_single_wl_angle_point, 
-                         (None, None, None,None, None, None, None, None, 0, None, None)), 
-                         (None, None, None,None, None, None, None, None, None, 0, None))
+                         (None, None, None, None, None, None, None, None, 0, None, None)), 
+                         (None, None, None, None, None, None, None, None, None, 0, None))
     
     # Apply the vectorized function `tmm_vmap` to the input arguments and return the result.
     # `data`, `material_distribution`, `thickness_list`, and `polarization` remain constant during vectorized computation

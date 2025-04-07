@@ -538,7 +538,7 @@ def compute_r_t_magnitudes_incoh(coherent_layer_indices: ArrayLike, coherency_in
 
         if condition:
             # If the layer is coherent, compute R and T using the appropriate function
-            R, T = compute_coh_r_t_magnitudes_incoh_film(coherency_index, rts, nk_list, layer_angles, polarization)
+            R, T = compute_incoh_r_t_magnitudes_incoh_film(coherency_index, rts, nk_list, layer_angles, polarization)
         else:
             # If the layer is incoherent, use an alternative computation including phase information
             R, T = compute_coh_r_t_magnitudes_incoh_film(coherency_index, coherent_layer_indices, rts, layer_phases, nk_list, layer_angles, polarization)
