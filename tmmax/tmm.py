@@ -85,9 +85,9 @@ def tmm_coh_single_wl_angle_point(data: ArrayLike,
                                   angle_of_incidence: ArrayLike,
                                   polarization: ArrayLike) -> Array:
     """
-    This function implements the Transfer Matrix Method (TMM) to compute the reflectance (R) 
-    and transmittance (T) of a coherent multilayer thin-film structure for a given wavelength, 
-    angle of incidence, and polarization.
+    This function implements the JIT-ed version of Transfer Matrix Method (TMM) to 
+    compute the reflectance (R) and transmittance (T) of a coherent multilayer thin-film 
+    structure for a given wavelength, angle of incidence, and polarization.
 
     Arguments:
     ----------
@@ -154,12 +154,6 @@ def tmm_coh_single_wl_angle_point(data: ArrayLike,
     # Incorporate the reflection and transmission coefficients of the incoming medium
     # into the total transfer matrix.
     tr_matrix = jnp.multiply(jnp.true_divide(1, rt.at[0,1].get()), jnp.dot(jnp.array([[1, rt.at[0,0].get()], [rt.at[0,0].get(), 1]]), tr_matrix))
-
-    # Compute the first layer matrix for the incoming medium
-    first_layer_matrix = compute_first_layer_matrix_coherent(r = rt.at[0,0].get(),
-                                                             t = rt.at[0,1].get())
-    # Multiply the first layer matrix with the transfer matrix
-    tr_matrix = jnp.matmul(first_layer_matrix, tr_matrix)
 
     # Extract the complex reflectance coefficient (r) from the total transfer matrix.
     r = jnp.true_divide(tr_matrix.at[1,0].get(), tr_matrix.at[0,0].get())
