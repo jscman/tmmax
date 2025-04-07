@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 jax>=0.5.0
 matplotlib>=3.10.0
 numpy>=2.2.2
 pandas>=2.2.3
 scipy>=1.15.1
+=======
+jax>=0.5.0
+matplotlib>=3.10.0
+numpy>=2.2.2
+pandas>=2.2.3
+scipy>=1.15.1
+>>>>>>> 906fc99a427337c4db25b5d5673b37e53905dd19

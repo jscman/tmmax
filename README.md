@@ -37,13 +37,9 @@ The examples cover fundamental and advanced use cases, including:
 
 - Material Database Management: Retrieving wavelength-dependent refractive index (n) and extinction coefficient (k) data from the built-in material database. Users can seamlessly add new materials, modify existing entries, or remove materials while maintaining database integrity.
 
-- Thin-Film Optical Properties: Computing reflection (R), transmission (T), and absorption (A) spectra for both coherent and incoherent multilayer thin-film structures. These calculations leverage the Transfer Matrix Method (TMM) for rigorous wave propagation analysis.
+- Thin-Film Optical Properties: Computing reflection (R), transmission (T), and absorption (A) spectra for both coherent and incoherent multilayer thin-film structures.
 
 - Filter Design and Optimization: Rapid simulation of optical filters, showcasing how tmmax efficiently models various thin-film coatings, such as anti-reflective coatings, high-reflectivity mirrors, and bandpass filters.
-
-Each example is designed to be highly modular, providing users with clear, structured workflows to integrate tmmax into their own research or engineering projects. Whether designing custom multilayer coatings or optimizing optical performance, the documentation serves as a comprehensive guide to leveraging the full computational power of tmmax.
-
-
 
 ## Usage
 
@@ -80,7 +76,7 @@ R_p, T_p = tmm(material_list = material_list,
   <img src="https://github.com/bahremsd/tmmax/blob/master/docs/images/thin_film_example.png" alt="usage_example">
 </div>
 
-For cases where an incoherent layer is introduced within the stack, the simulation must account for phase randomization effects. In tmmax, incoherent layers are denoted by `1`, while coherent layers remain as `0`. The following example demonstrates the configuration of the same stack with an incoherent layer:
+For cases where an incoherent layer is introduced within the stack, the simulation should include averaging effects of "thick" layers. In tmmax, incoherent layers are denoted by `1`, while coherent layers remain as `0`. The following example demonstrates the configuration of the same stack with incoherent layers:
 
 ```python
 import jax.numpy as jnp
@@ -99,7 +95,7 @@ R_s, T_s = tmm(material_list = material_list,
                thickness_list = thickness_list,
                wavelength_arr = wavelength_arr,
                angle_of_incidences = angle_of_incidences,
-               coherency_list = coherency_list
+               coherency_list = coherency_list,
                polarization = polarization)
 
 polarization = 'p'
@@ -108,11 +104,9 @@ R_p, T_p = tmm(material_list = material_list,
                thickness_list = thickness_list,
                wavelength_arr = wavelength_arr,
                angle_of_incidences = angle_of_incidences,
-               coherency_list = coherency_list
+               coherency_list = coherency_list,
                polarization = polarization)
 ```
-
-This approach enables precise modeling of optical interference effects in thin-film coatings, dielectric mirrors, and anti-reflective coatings, while seamlessly integrating incoherency considerations when required.
 
 ## Database
 
@@ -141,17 +135,15 @@ One of the primary factors influencing computational complexity in tmm simulatio
   <img src="https://github.com/bahremsd/tmmax/blob/master/benchmarks/layer_size_exp_results/layer_size_figure.png" alt="layer_size_exp">
 </div>
 
-### Wavelength and Angle of Incidence Array Lnegths vs Run Time
+### Wavelength and Angle of Incidence Array Lengths vs Run Time
 
 Apart from layer count, the length of the wavelength array and angle of incidence array significantly impact computational performance. Our analysis revealed that `tmm-fast` exhibited slower execution times relative to `vtmm` and `tmmax` under single-threaded execution. However, it is important to note that `tmm-fast` is explicitly optimized for multi-core CPU execution and GPU acceleration. Thus, benchmarking `tmm-fast` on a single-core CPU does not reflect its full performance potential.
 
-When comparing `vtmm` and `tmmax`, both demonstrated similar runtime performance across varying array lengths. However, as the layer count increased from 8 to 80, `vtmm` exhibited a higher runtime overhead than `tmmax`, reinforcing the latter’s efficiency in handling deep multilayer stacks. Additionally, it is worth noting that these benchmarks were conducted on an "Initial beta" version of `vtmm`, and future iterations may yield different performance characteristics. Therefore, a reevaluation on updated `vtmm` releases is recommended.
+When comparing `vtmm` and `tmmax`, both demonstrated similar runtime performance across varying array lengths. However, as the layer count increased from 8 to 80, `vtmm` exhibited a higher runtime overhead than `tmmax`. Additionally, it is worth noting that these benchmarks were conducted on an "Initial beta" version of `vtmm`, and future iterations may yield different performance characteristics. Therefore, a reevaluation on updated `vtmm` releases is recommended.
 
 <div align="center">
   <img src="https://github.com/bahremsd/tmmax/blob/master/benchmarks/vmap_array_length_exp_results/vmap_array_length_figure.png" alt="vmap_array_length_exp">
 </div>
-
-As discussed, certain tmm implementations leverage GPU acceleration for enhanced computational efficiency. Specifically, `vtmm` is implemented in TensorFlow, while `tmm-fast` is developed using Pytorch with multi-threading and GPU compatibility. Consequently, if a GPU is available, the benchmarks presented here may not be representative, and users are encouraged to perform their own comparative analyses of `vtmm`, `fast-tmm`, and `tmmax` under GPU-accelerated conditions. For a detailed breakdown of benchmark results and implementation details, refer to the `benchmark` directory within the repository.
 
 ## Installation
 
@@ -171,11 +163,13 @@ This repository sometimes utilizes approaches from Steven Byrnes' [`tmm`](https:
 
 For further exploration, we also recommend examining the [`vtmm`](https://github.com/fancompute/vtmm) and [`tmm-fast`](https://github.com/MLResearchAtOSRAM/tmm_fast) libraries, which offer alternative approaches for thin film simulation. In particular, the tmm-fast library integrates GPU acceleration via the PyTorch framework, providing a significant performance boost for batched simulations. We strongly encourage leveraging this capability if you have access to GPU resource.
 
+As discussed, certain tmm implementations leverage GPU acceleration for enhanced computational efficiency. Specifically, `vtmm` is implemented in TensorFlow, while `tmm-fast` is developed using Pytorch with multi-threading and GPU compatibility. Consequently, if a GPU is available, the benchmarks presented here may not be representative, and users are encouraged to perform their own comparative analyses of `vtmm`, `fast-tmm`, and `tmmax` under GPU-accelerated conditions. For a detailed breakdown of benchmark results and implementation details, refer to the `benchmark` directory within the repository.
+
 Also if you find the `tmmax` library beneficial in your work, we kindly ask that you consider citing us.
 
 ```bibtex
 @software{tmmax,
-  author = {Bahrem Serhat Danis},
+  author = {Bahrem Serhat Danis, Esra Zayim},
   title = {tmmax: transfer matrix method with jax},
   version = {1.0.0},
   url = {https://github.com/bahremsd/tmmax},
