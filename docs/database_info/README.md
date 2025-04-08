@@ -55,36 +55,36 @@
     T.J. Bright, J.I. Watjen, Z.M. Zhang, C. Muratore, A.A. Voevodin, Optical properties of HfO2 thin films deposited by magnetron sputtering: From the visible to the far-infrared, Thin Solid Films, Volume 520, Issue 22, 2012, Pages 6793-6802, ISSN 0040-6090. [doi](https://doi.org/10.1016/j.tsf.2012.07.037)
 
     **COMMENTS: "Thin hafnia films of thicknesses from about 180 to 500 nm deposited on Si substrates using reactive magnetron sputtering."**
-    
+
 - **Kischkat_Al2O3**
 
     J. Kischkat, S. Peters, B. Gruska, M. Semtsiv, M. Chashnikova, M. Klinkmüller, O. Fedosenko, S. Machulik, A. Aleksandrova, G. Monastyrskyi, Y. Flores, W. T. Masselink, Mid-infrared optical properties of thin films of aluminum oxide, titanium dioxide, silicon dioxide, aluminum nitride, and silicon nitride, Applied optics, 51. Jg., Nr. 28, 2012, S. 6789-6798. [doi](https://doi.org/10.1364/AO.51.006789)
 
-    **COMMENTS: "497-nm single layer on Si substrate. Prepared by room temperature reactive sputter deposition using Al target and 2.0 SCCM O$_2$ flux."**
+    **COMMENTS: "497-nm single layer on Si substrate. Prepared by room temperature reactive sputter deposition using Al target and 2.0 SCCM O<sub>2</sub> flux."**
 
 - **Kischkat_AlN**
 
     J. Kischkat, S. Peters, B. Gruska, M. Semtsiv, M. Chashnikova, M. Klinkmüller, O. Fedosenko, S. Machulik, A. Aleksandrova, G. Monastyrskyi, Y. Flores, W. T. Masselink, Mid-infrared optical properties of thin films of aluminum oxide, titanium dioxide, silicon dioxide, aluminum nitride, and silicon nitride, Applied optics, 51. Jg., Nr. 28, 2012, S. 6789-6798. [doi](https://doi.org/10.1364/AO.51.006789)
 
-    **COMMENTS: "297-nm single layer on Si substrate. Prepared by room temperature reactive sputter deposition using Al target and 2.0 SCCM N$_2$ flux at 300 W plasma power."**
+    **COMMENTS: "297-nm single layer on Si substrate. Prepared by room temperature reactive sputter deposition using Al target and 2.0 SCCM N<sub>2</sub> flux at 300 W plasma power."**
 
 - **Kischkat_Si3N4**
 
     J. Kischkat, S. Peters, B. Gruska, M. Semtsiv, M. Chashnikova, M. Klinkmüller, O. Fedosenko, S. Machulik, A. Aleksandrova, G. Monastyrskyi, Y. Flores, W. T. Masselink, Mid-infrared optical properties of thin films of aluminum oxide, titanium dioxide, silicon dioxide, aluminum nitride, and silicon nitride, Applied optics, 51. Jg., Nr. 28, 2012, S. 6789-6798. [doi](https://doi.org/10.1364/AO.51.006789)
 
-    **COMMENTS: "437-nm single layer on Si substrate. Prepared by room temperature reactive sputter deposition using Si target and 2.0 SCCM N$_2$ flux at 300 W plasma power."**
+    **COMMENTS: "437-nm single layer on Si substrate. Prepared by room temperature reactive sputter deposition using Si target and 2.0 SCCM N<sub>2</sub> flux at 300 W plasma power."**
 
 - **Kischkat_SiO2**
 
     J. Kischkat, S. Peters, B. Gruska, M. Semtsiv, M. Chashnikova, M. Klinkmüller, O. Fedosenko, S. Machulik, A. Aleksandrova, G. Monastyrskyi, Y. Flores, W. T. Masselink, Mid-infrared optical properties of thin films of aluminum oxide, titanium dioxide, silicon dioxide, aluminum nitride, and silicon nitride, Applied optics, 51. Jg., Nr. 28, 2012, S. 6789-6798. [doi](https://doi.org/10.1364/AO.51.006789)
 
-    **COMMENTS: "510-nm single layer on Si substrate. Prepared by room temperature reactive sputter deposition using Si target and 2.0 SCCM O$_2$ flux."**
+    **COMMENTS: "510-nm single layer on Si substrate. Prepared by room temperature reactive sputter deposition using Si target and 2.0 SCCM O<sub>2</sub> flux."**
 
 - **Kischkat_TiO2**
 
     J. Kischkat, S. Peters, B. Gruska, M. Semtsiv, M. Chashnikova, M. Klinkmüller, O. Fedosenko, S. Machulik, A. Aleksandrova, G. Monastyrskyi, Y. Flores, W. T. Masselink, Mid-infrared optical properties of thin films of aluminum oxide, titanium dioxide, silicon dioxide, aluminum nitride, and silicon nitride, Applied optics, 51. Jg., Nr. 28, 2012, S. 6789-6798. [doi](https://doi.org/10.1364/AO.51.006789)
 
-    **COMMENTS: "352-nm single layer on Si substrate. Prepared by room temperature reactive sputter deposition using TiO$_2$ target."**
+    **COMMENTS: "352-nm single layer on Si substrate. Prepared by room temperature reactive sputter deposition using TiO<sub>2</sub> target."**
 
 - **LaF3**
 
