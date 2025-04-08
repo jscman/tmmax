@@ -45,7 +45,7 @@ def load_nk_data_csv(material_name: str = '') -> Union[jnp.ndarray, None]:
         raise ValueError("Material name cannot be an empty string.")  # Raise an error if no material is provided
 
     # Construct the file path and check if the file exists
-    file_path = os.path.join(nk_data_dir, f'{material_name}.csv')  # Create the full path to the file
+    file_path = os.path.join(nk_data_dir, f'csv/{material_name}.csv')  # Create the full path to the file
     if not os.path.exists(file_path):
         # Raise an error if the file for the material does not exist
         raise FileNotFoundError(f"No data found for material '{material_name}' in 'nk_data/' folder (library database).")
