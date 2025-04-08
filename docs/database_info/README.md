@@ -56,6 +56,36 @@
 
     **COMMENTS: "Thin hafnia films of thicknesses from about 180 to 500 nm deposited on Si substrates using reactive magnetron sputtering."**
 
+- **Kischkat_Al2O3**
+
+    J. Kischkat, S. Peters, B. Gruska, M. Semtsiv, M. Chashnikova, M. Klinkmüller, O. Fedosenko, S. Machulik, A. Aleksandrova, G. Monastyrskyi, Y. Flores, W. T. Masselink, Mid-infrared optical properties of thin films of aluminum oxide, titanium dioxide, silicon dioxide, aluminum nitride, and silicon nitride, Applied optics, 51. Jg., Nr. 28, 2012, S. 6789-6798. [doi](https://doi.org/10.1364/AO.51.006789)
+
+    **COMMENTS: "497-nm single layer on Si substrate. Prepared by room temperature reactive sputter deposition using Al target and 2.0 SCCM O<sub>2</sub> flux."**
+
+- **Kischkat_AlN**
+
+    J. Kischkat, S. Peters, B. Gruska, M. Semtsiv, M. Chashnikova, M. Klinkmüller, O. Fedosenko, S. Machulik, A. Aleksandrova, G. Monastyrskyi, Y. Flores, W. T. Masselink, Mid-infrared optical properties of thin films of aluminum oxide, titanium dioxide, silicon dioxide, aluminum nitride, and silicon nitride, Applied optics, 51. Jg., Nr. 28, 2012, S. 6789-6798. [doi](https://doi.org/10.1364/AO.51.006789)
+
+    **COMMENTS: "297-nm single layer on Si substrate. Prepared by room temperature reactive sputter deposition using Al target and 2.0 SCCM N<sub>2</sub> flux at 300 W plasma power."**
+
+- **Kischkat_Si3N4**
+
+    J. Kischkat, S. Peters, B. Gruska, M. Semtsiv, M. Chashnikova, M. Klinkmüller, O. Fedosenko, S. Machulik, A. Aleksandrova, G. Monastyrskyi, Y. Flores, W. T. Masselink, Mid-infrared optical properties of thin films of aluminum oxide, titanium dioxide, silicon dioxide, aluminum nitride, and silicon nitride, Applied optics, 51. Jg., Nr. 28, 2012, S. 6789-6798. [doi](https://doi.org/10.1364/AO.51.006789)
+
+    **COMMENTS: "437-nm single layer on Si substrate. Prepared by room temperature reactive sputter deposition using Si target and 2.0 SCCM N<sub>2</sub> flux at 300 W plasma power."**
+
+- **Kischkat_SiO2**
+
+    J. Kischkat, S. Peters, B. Gruska, M. Semtsiv, M. Chashnikova, M. Klinkmüller, O. Fedosenko, S. Machulik, A. Aleksandrova, G. Monastyrskyi, Y. Flores, W. T. Masselink, Mid-infrared optical properties of thin films of aluminum oxide, titanium dioxide, silicon dioxide, aluminum nitride, and silicon nitride, Applied optics, 51. Jg., Nr. 28, 2012, S. 6789-6798. [doi](https://doi.org/10.1364/AO.51.006789)
+
+    **COMMENTS: "510-nm single layer on Si substrate. Prepared by room temperature reactive sputter deposition using Si target and 2.0 SCCM O<sub>2</sub> flux."**
+
+- **Kischkat_TiO2**
+
+    J. Kischkat, S. Peters, B. Gruska, M. Semtsiv, M. Chashnikova, M. Klinkmüller, O. Fedosenko, S. Machulik, A. Aleksandrova, G. Monastyrskyi, Y. Flores, W. T. Masselink, Mid-infrared optical properties of thin films of aluminum oxide, titanium dioxide, silicon dioxide, aluminum nitride, and silicon nitride, Applied optics, 51. Jg., Nr. 28, 2012, S. 6789-6798. [doi](https://doi.org/10.1364/AO.51.006789)
+
+    **COMMENTS: "352-nm single layer on Si substrate. Prepared by room temperature reactive sputter deposition using TiO<sub>2</sub> target."**
+
 - **LaF3**
 
     Luis V. Rodríguez-de Marcos, Juan I. Larruquert, José A. Méndez, and José A. Aznárez, "Self-consistent optical constants of MgF2, LaF3, and CeF3 films," Opt. Mater. Express 7, 989-1006 (2017) [doi](https://doi.org/10.1364/OME.7.000989)
